@@ -57,4 +57,10 @@ defmodule RedtubeTest do
     assert results != nil
     assert length(results) >= 1
   end
+
+  test "get detailed stars list receives a valid JSON response" do
+    {:ok, results} = Redtube.get_detailed_star_list()
+    assert results != nil
+    assert length(results) >= 1
+  end
 end
