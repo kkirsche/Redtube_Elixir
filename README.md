@@ -1,4 +1,4 @@
-[![Build Status](https://travis-ci.org/kkirsche/Redtube_Elixir.svg?branch=master)](https://travis-ci.org/kkirsche/Redtube_Elixir) [![Hex pm](http://img.shields.io/hexpm/v/httpoison.svg?style=flat)](https://hex.pm/packages/redtube)
+[![Build Status](https://travis-ci.org/kkirsche/Redtube_Elixir.svg?branch=master)](https://travis-ci.org/kkirsche/Redtube_Elixir) [![Hex.pm](https://img.shields.io/hexpm/v/plug.svg)](https://hex.pm/packages/redtube)
 
 
 Redtube API Wrapper
