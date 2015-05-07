@@ -181,7 +181,7 @@ defmodule Redtube do
   end
 
   @doc """
-  Retrieves all available categories.
+  Retrieves all available tags.
 
   ## Example
 
@@ -196,6 +196,56 @@ defmodule Redtube do
                     {:params,
                       [
                         data: "redtube.Tags.getTagList",
+                        output: "json"
+                      ]
+                    }
+                  ]
+                ).body
+
+    {:ok, response}
+  end
+
+  @doc """
+  Retrieves all pornstars available.
+
+  ## Example
+
+  iex> Redtube.get_star_list
+       {:ok, response}
+  """
+  def get_star_list() do
+    Redtube.start
+    response = Redtube.get!("/",
+                 [],
+                  [
+                    {:params,
+                      [
+                        data: "redtube.Stars.getStarList",
+                        output: "json"
+                      ]
+                    }
+                  ]
+                ).body
+
+    {:ok, response}
+  end
+
+  @doc """
+  Retrieves all pornstars available.
+
+  ## Example
+
+  iex> Redtube.get_star_list
+       {:ok, response}
+  """
+  def get_detailed_star_list() do
+    Redtube.start
+    response = Redtube.get!("/",
+                 [],
+                  [
+                    {:params,
+                      [
+                        data: "redtube.Stars.getStarDetailedList",
                         output: "json"
                       ]
                     }
