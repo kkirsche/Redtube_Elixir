@@ -35,7 +35,7 @@ defmodule Redtube do
 
   ## Example
 
-  iex> Redtube.get_video_by_id video_id: 179543, thumbsize: "all"
+  iex> Redtube.search_videos search: "hard", thumbsize: "all"
        {:ok, response}
   """
   def search_videos(criteria \\ []) do

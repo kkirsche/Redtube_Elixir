@@ -3,10 +3,10 @@ defmodule Redtube.Mixfile do
 
   def project do
     [app: :redtube,
-     version: "0.0.1",
+     version: "1.0.0",
      elixir: "~> 1.0",
-     contributors: ["Kevin Kirsche"],
-     links: ["https://github.com/kkirsche/Redtube_Elixir"],
+     description: "API Wrapper for Redtube",
+     package: package,
      build_embedded: Mix.env == :prod,
      start_permanent: Mix.env == :prod,
      deps: deps]
@@ -31,5 +31,11 @@ defmodule Redtube.Mixfile do
   defp deps do
     [{:httpoison, "~> 0.6"},
      {:poison, "~> 1.4"}]
+  end
+
+  defp package do
+    [contributors: ["Kevin Kirsche"],
+     licenses: ["MIT"],
+     links: %{"GitHub" => "https://github.com/kkirsche/Redtube_Elixir"}]
   end
 end
