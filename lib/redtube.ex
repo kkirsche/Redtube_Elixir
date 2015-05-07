@@ -154,4 +154,54 @@ defmodule Redtube do
 
     {:ok, response}
   end
+
+  @doc """
+  Retrieves all available categories.
+
+  ## Example
+
+  iex> Redtube.get_categories_list
+       {:ok, response}
+  """
+  def get_categories_list() do
+    Redtube.start
+    response = Redtube.get!("/",
+                 [],
+                  [
+                    {:params,
+                      [
+                        data: "redtube.Categories.getCategoriesList",
+                        output: "json"
+                      ]
+                    }
+                  ]
+                ).body
+
+    {:ok, response}
+  end
+
+  @doc """
+  Retrieves all available categories.
+
+  ## Example
+
+  iex> Redtube.get_tags_list
+       {:ok, response}
+  """
+  def get_tags_list() do
+    Redtube.start
+    response = Redtube.get!("/",
+                 [],
+                  [
+                    {:params,
+                      [
+                        data: "redtube.Tags.getTagList",
+                        output: "json"
+                      ]
+                    }
+                  ]
+                ).body
+
+    {:ok, response}
+  end
 end

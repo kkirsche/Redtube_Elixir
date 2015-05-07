@@ -5,6 +5,8 @@ defmodule Redtube.Mixfile do
     [app: :redtube,
      version: "0.0.1",
      elixir: "~> 1.0",
+     contributors: ["Kevin Kirsche"],
+     links: ["https://github.com/kkirsche/Redtube_Elixir"],
      build_embedded: Mix.env == :prod,
      start_permanent: Mix.env == :prod,
      deps: deps]

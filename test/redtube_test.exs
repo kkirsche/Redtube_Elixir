@@ -33,4 +33,16 @@ defmodule RedtubeTest do
     assert results != nil
     assert length(results) >= 1
   end
+
+  test "get categories list receives a valid JSON response" do
+    {:ok, results} = Redtube.get_categories_list
+    assert results != nil
+    assert length(results) >= 1
+  end
+
+  test "get tags list receives a valid JSON response" do
+    {:ok, results} = Redtube.get_tags_list
+    assert results != nil
+    assert length(results) >= 1
+  end
 end
