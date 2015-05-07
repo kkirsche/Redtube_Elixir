@@ -1,10 +1,12 @@
 defmodule Redtube do
   use HTTPoison.Base
 
+  @spec process_url(String) :: String
   def process_url(url) do
     "http://api.redtube.com" <> url
   end
 
+  @spec process_response_body(List) :: List
   def process_response_body(body) do
     body
     |> Poison.decode!
@@ -38,6 +40,7 @@ defmodule Redtube do
   iex> Redtube.search_videos search: "hard", thumbsize: "all"
        {:ok, response}
   """
+  @spec search_videos(List) :: List
   def search_videos(criteria \\ []) do
     Redtube.start
     response = Redtube.get!("/",
@@ -63,6 +66,7 @@ defmodule Redtube do
   iex> Redtube.get_video_by_id video_id: 179543, thumbsize: "all"
        {:ok, response}
   """
+  @spec get_video_by_id(List) :: List
   def get_video_by_id(criteria \\ []) do
     Redtube.start
     response = Redtube.get!("/",
@@ -88,6 +92,7 @@ defmodule Redtube do
   iex> Redtube.is_video_active video_id: 179543
        {:ok, response}
   """
+  @spec is_video_active(List) :: List
   def is_video_active(criteria \\ []) do
     Redtube.start
     response = Redtube.get!("/",
@@ -113,6 +118,7 @@ defmodule Redtube do
   iex> Redtube.get_video_embed_code video_id: 179543
        {:ok, response}
   """
+  @spec get_video_embed_code(List) :: List
   def get_video_embed_code(criteria \\ []) do
     Redtube.start
     response = Redtube.get!("/",
@@ -138,6 +144,7 @@ defmodule Redtube do
   iex> Redtube.get_deleted_videos page: 1
        {:ok, response}
   """
+  @spec get_deleted_videos(List) :: List
   def get_deleted_videos(page \\ [page: 1]) do
     Redtube.start
     response = Redtube.get!("/",
@@ -163,6 +170,7 @@ defmodule Redtube do
   iex> Redtube.get_categories_list
        {:ok, response}
   """
+  @spec get_categories_list() :: nil
   def get_categories_list() do
     Redtube.start
     response = Redtube.get!("/",
@@ -188,6 +196,7 @@ defmodule Redtube do
   iex> Redtube.get_tags_list
        {:ok, response}
   """
+  @spec get_tags_list() :: nil
   def get_tags_list() do
     Redtube.start
     response = Redtube.get!("/",
@@ -213,6 +222,7 @@ defmodule Redtube do
   iex> Redtube.get_star_list
        {:ok, response}
   """
+  @spec get_star_list() :: nil
   def get_star_list() do
     Redtube.start
     response = Redtube.get!("/",
@@ -238,6 +248,7 @@ defmodule Redtube do
   iex> Redtube.get_star_list
        {:ok, response}
   """
+  @spec get_detailed_star_list() :: nil
   def get_detailed_star_list() do
     Redtube.start
     response = Redtube.get!("/",
