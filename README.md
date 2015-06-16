@@ -26,4 +26,5 @@ Example usage:
 
 ```elixir
 Redtube.search_videos search: "kari milla", tags: "Blowjob"
+Redtube.search_videos search: "tori black", tags: "gangbang, hardcore"
 ```
